@@ -16,3 +16,15 @@ ws = wb.create_sheet()  # 시트 생성
 ws.title = "mysheet"
 ws.sheet_properties.tabColor = "ff0000"  # 탭 색상 변경
 wb.save('sample_4_2.xlsx')
+
+
+
+
+wb.create_sheet('InsertSheet')  # 시트를 생성할 때 시트 이름을 바로 지정할 수 있다.
+wb.create_sheet('NewSheet', 2)  # 인덱스 번호를 써서 시트 순서를 정할 수 있다.
+
+
+
+# 시트 복사
+target = wb.copy_worksheet(new_ws)
+target.title = 'Copied Sheet'
