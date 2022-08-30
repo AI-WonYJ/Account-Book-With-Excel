@@ -59,7 +59,7 @@ for rows in row_range:
 
 
 # 2번째 줄에서 마지막 줄까지 가져오기(max_row)
-from openpyxl.utils.cell import coordinate_from_string
+from openpyxl.utils.cell import coordinate_from_string  # coordinate_from_string을 사용하면 'A1', 'B2' 이런 형식의 좌표값을 가져올 수 있다.
 
 row_range = ws[2: ws.max_row]
 for rows in row_range:
