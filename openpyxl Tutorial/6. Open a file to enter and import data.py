@@ -16,3 +16,30 @@ for x in range(1, ws.max_column + 1):
     for y in range(1, ws.max_row + 1):
         print(ws.cell(row = y, column = x).value, end = " ")
     print()
+
+
+
+# append를 사용해 셀에 값을 입력
+from openpyxl import Workbook
+from random import *
+
+wb = Workbook()
+ws = wb.active
+
+ws.append(['Num', 'Eng', 'Math'])
+
+for i in range(1, 11):
+    ws.append([i, randint(0, 100), randint(0, 100)])
+wb.save('cell_range_6_1.xlsx')
+
+
+
+# 데이터 가져오기 (B 열 가져오기)
+col_B = ws['B']
+print(col_B)
+for cell in col_B:
+    print(cell.value, end = " ")
+
+
+
+# 첫번째 row만 가져오기
