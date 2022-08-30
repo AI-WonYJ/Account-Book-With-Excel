@@ -17,6 +17,27 @@ print(ws['A1'])  # A1 셀 정보 출력
 
 print(ws['A2'].value)  # A2 셀 값 출력
 
-c = ws.cell(column = 3, row = 1, value = 10)
+c = ws.cell(column = 3, row = 1, value = 10)  # 셀의 위치로 값 지정
 print(c)
 print(c.value)
+
+
+
+# A1 셀부터 J10 셀까지 1 ~ 100을 순서대로 넣는다.
+i = 1
+for x in range(1, 11):
+    for y in range(1, 11):
+        ws.cell(column = x, row = y, value = 1)
+        i += 1
+
+wb.save('cell_5_1.xlsx')
+wb.close()
+
+
+
+# A1 셀부터 J10 셀까지 1 ~ 100을 무작위로 넣는다.
+for x in range(1, 11):
+    for y in range(1, 11):
+        ws.cell(column = x, row = y, value = randint(0, 100))
+wb.save('cell_5_2.xlsx')
+wb.close()
