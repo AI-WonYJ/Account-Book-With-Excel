@@ -43,3 +43,27 @@ for cell in col_B:
 
 
 # 첫번째 row만 가져오기
+row_title = ws[1]
+for cell in row_title:
+    print(cell.value)
+
+
+
+# 2번째 줄에서 6번째 줄까지 가져오기
+row_range = ws[2:6]
+for rows in row_range:
+    for cell in rows:
+        print(cell.value, end = " ")
+    print()
+
+
+
+# 2번째 줄에서 마지막 줄까지 가져오기(max_row)
+from openpyxl.utils.cell import coordinate_from_string
+
+row_range = ws[2: ws.max_row]
+for rows in row_range:
+    for cell in rows:
+        xy = coordinate_from_string(cell.coordinate)
+        print(xy, end = " ")
+    print()
